@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmontoro <gmontoro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 19:27:20 by gmontoro          #+#    #+#             */
-/*   Updated: 2025/03/25 12:39:15 by gmontoro         ###   ########.fr       */
+/*   Created: 2025/03/23 19:12:51 by gmontoro          #+#    #+#             */
+/*   Updated: 2025/03/25 12:45:07 by gmontoro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include <stdlib.h>
-#include <string>
-#include <cstdlib>
 
-class	PhoneBook{
-	private:
-		Contact contacts[8];
-		int		amount;
-		int		flag;
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	add();
-		void	search();
-		void	cool_display();
-		void	write_field(std::string);
-		void	trunc_dot(std::string);
-};
+int main(){
+	PhoneBook libro;
+	std::string str = "carajos";
 
-#endif
+	std::cout << "Welcome to my phonebook " << std:: endl;
+	while (1 && std::cin)
+	{
+		std::cout << "Options: ADD  |  SEARCH  | EXIT  " << std:: endl << " > ";
+		std::getline(std::cin, str);
+		if (str == "ADD")
+			libro.add();
+		else if (str == "SEARCH")
+			libro.search();
+		else if (str == "EXIT")
+			break ;
+	}
+	return (0);
+}
